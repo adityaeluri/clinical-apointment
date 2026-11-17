@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore a synthetic clinic appointment attendance model.">
+    <title>Clinic Appointment Predictor</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <p class="eyebrow">Synthetic data · Educational demo</p>
+        <h1>Clinic appointment predictor</h1>
+        <p>Estimate the chance of a missed appointment using information known before the visit.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="predict-heading">
+        <h2 id="predict-heading">Score an appointment</h2>
+        <form id="prediction-form">
+          <label>
+            Days until appointment
+            <input name="lead_days" type="number" min="0" step="1" value="30" required>
+          </label>
+          <label>
+            Previous missed appointments
+            <input name="prior_missed" type="number" min="0" step="1" value="2" required>
+          </label>
+          <label>
+            Reminder sent
+            <select name="reminder_sent" required>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </label>
+          <button type="submit">Calculate score</button>
+        </form>
+        <p id="result" class="result" role="status" aria-live="polite">Enter appointment details to calculate a score.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Synthetic data summary</h2>
+        <p>The chart describes missed appointment rates in this small demonstration dataset.</p>
+        <img src="/reminder_chart.png" alt="Bar chart showing missed rates by reminder group">
+      </section>
+
+      <section class="panel" aria-labelledby="metrics-heading">
+        <h2 id="metrics-heading">Model evaluation</h2>
+        <pre id="metrics">Loading evaluation…</pre>
+      </section>
+
+      <footer>
+        This educational demo uses synthetic data. Do not use its scores for clinical or operational decisions.
+      </footer>
+    </main>
+  </body>
+</html>

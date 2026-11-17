@@ -1,0 +1,7 @@
+__pycache__/
+outputs/
+site/model.json
+site/metrics.txt
+site/new_prediction.json
+site/reminder_chart.png
+site/reminder_summary.csv
